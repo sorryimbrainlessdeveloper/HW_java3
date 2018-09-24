@@ -1,0 +1,52 @@
+package HW_java3.lesson1;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Main {
+
+    String arr[] = {"hallo", "all"};
+    Integer arr1[] = {1,2,3,4,5};
+
+    public static void main(String[] args) {
+        Main main = new Main();
+        main.doSomething();
+        main.doSomething1();
+        main.doSomething2();
+    }
+
+    public void doSomething(){
+        System.out.println("first element: " + arr[0]);
+        System.out.println("second element: " + arr[1]);
+        String str = arr[0];
+        arr[0] = arr[1];
+        arr[1] = str;
+        System.out.println("after revers elements.");
+        System.out.println("first element: " + arr[0]);
+        System.out.println("second element: " + arr[1]);
+    }
+
+    public void doSomething1() { new ArrayList<>(Arrays.asList(arr1)); }
+
+    public void doSomething2(){
+
+        Apple apple1 = new Apple();
+        Apple apple2 = new Apple();
+        Apple apple3 = new Apple();
+
+        Orange orange1 = new Orange();
+        Orange orange2 = new Orange();
+        Orange orange3 = new Orange();
+
+        Box<Apple> box1 = new Box<Apple>(apple1, apple2, apple3);
+        Box<Orange> box2 = new Box<Orange>(orange1, orange2,orange3);
+
+        System.out.println(box1.compare(box2));
+
+        Box<Orange> box3 = new Box<Orange>();
+        box2.transfer(box3);
+
+
+    }
+}
+
